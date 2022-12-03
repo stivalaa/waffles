@@ -2326,8 +2326,10 @@ void GRayTraceSphere::drawWireFrame(GCamera* pCamera, GImage* pImage)
 // virtual
 void GRayTraceSphere::center(G3DVector* pOutPoint)
 {
+#pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wclass-memaccess"
 	memcpy(pOutPoint, &m_center, sizeof(G3DVector));
+#pragma GCC diagnostic pop
 }
 
 // -----------------------------------------------------------------------------
