@@ -2326,7 +2326,8 @@ void GRayTraceSphere::drawWireFrame(GCamera* pCamera, GImage* pImage)
 // virtual
 void GRayTraceSphere::center(G3DVector* pOutPoint)
 {
-	//XXX does not compile memcpy(pOutPoint, &m_center, sizeof(G3DVector));
+#pragma GCC diagnostic ignored "-Wclass-memaccess"
+	memcpy(pOutPoint, &m_center, sizeof(G3DVector));
 }
 
 // -----------------------------------------------------------------------------
